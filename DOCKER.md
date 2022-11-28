@@ -15,3 +15,9 @@ sudo docker images | grep dockerized-react
 # Run the image in detached mode 
 # and map port 3000 inside the container with 3000 on current host
 sudo docker run -p 3000:3000 -d dockerized-react
+
+
+
+# stop container
+sudo docker ps
+sudo docker stop {CONTAINER_ID}
