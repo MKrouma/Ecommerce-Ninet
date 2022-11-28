@@ -74,7 +74,7 @@ function Navbar() {
 
             </div> */}
             <div className="itermLink">
-                <p>Mini Sizes</p>
+                {/* <p>Mini Sizes</p> */}
                 <p> contact</p>
             </div>
 
