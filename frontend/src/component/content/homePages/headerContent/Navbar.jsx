@@ -8,7 +8,8 @@ import HearderImg from './HearderImg';
 function Navbar() {
   return (
     <>
-        <div className="NavContainer">
+        <div className='position'>
+            <div className="NavContainer">
             <div className="title-site">
                 <p>NINET</p>
             </div>
@@ -74,11 +75,13 @@ function Navbar() {
 
             </div> */}
             <div className="itermLink">
-                <p>Mini Sizes</p>
                 <p> contact</p>
             </div>
+            {/* <p>Mini Sizes</p> */}
 
         </div>
+        </div>
+        
         <div>
             <HearderImg />
         </div>

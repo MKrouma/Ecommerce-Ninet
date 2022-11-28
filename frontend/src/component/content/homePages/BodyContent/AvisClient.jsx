@@ -1,4 +1,4 @@
-
+import '../../../style/homePageCss/bodyCss/AvisClient.css'
 
 function AvisClient() {
   return (
