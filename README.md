@@ -25,7 +25,7 @@ Pour le developpement nous aurons deux branches principales :
 - features branch : pour chaque feature à developer et intégrer au produit. 
 
 Il faut éviter de faire de longue branche. Il faut privilégier une branche pour un feature à intégrer. 
-
+Feature_branch_name = {DEVELOPER}_ISSUENUMBER_COMMENT
 
 ### Deploiement
 

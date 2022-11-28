@@ -8,7 +8,8 @@ import HearderImg from './HearderImg';
 function Navbar() {
   return (
     <>
-        <div className="NavContainer">
+        <div className='position'>
+            <div className="NavContainer">
             <div className="title-site">
                 <p>NINET</p>
             </div>
@@ -34,7 +35,7 @@ function Navbar() {
                 <span>Home</span>
                 <p>Shop</p>
             </div>
-            <div className='itermSelect'>
+            {/* <div className='itermSelect'>
                 <div className="selectBrands">
                     <label >Brands</label>
                     <select name="" id="">
@@ -72,13 +73,15 @@ function Navbar() {
                     </select>
                 </div>
 
-            </div>
+            </div> */}
             <div className="itermLink">
-                <p>Mini Sizes</p>
                 <p> contact</p>
             </div>
+            {/* <p>Mini Sizes</p> */}
 
         </div>
+        </div>
+        
         <div>
             <HearderImg />
         </div>

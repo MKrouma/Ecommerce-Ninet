@@ -151,7 +151,7 @@
 /*******************************************detail-iterm1********************************************************/
 .detail-iterm1{
     margin-top: 3rem;
-    background-image: url("../../../images//Rectangle\ 6.png");
+    background-image: url("../../../images/quality-price.jpg");
     background-size: cover;
     width: 100%;
     height: 44rem;
@@ -175,7 +175,6 @@
     background-image: url("../../../images//Rectangle\ 8.png");
     background-size: cover;
     width: 100%;
-    height: 50rem;
     display: flex;
     align-items: center;
     color: white;
