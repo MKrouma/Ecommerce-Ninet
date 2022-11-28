@@ -1,0 +1,171 @@
+.NavContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-bottom: 1px solid #F8F8F8;
+    padding: 1rem 5rem .5rem 5rem;
+}
+.title-site{
+    
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    /* identical to box height */
+
+
+    color: #030307;
+}
+.content-rigth{
+    display: flex;
+    justify-content: space-between;
+}
+.Search-input{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.content-input input{
+    width: 290px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    border: 1px solid #DFDFE6;
+    border-radius: 8px;
+    margin-right: 2rem;
+}
+.content-input input[type=text] {
+    padding-left: .8rem;
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #ADADB6;
+}
+.logo-input {
+    position: absolute;
+    left: 16rem;
+    top: .4rem;
+    bottom: 8.33%;
+    font-size: 1.5rem;
+    color: #67676D;
+
+}
+.content-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #67676D;
+    width: 7rem;
+    cursor: pointer;
+}
+.content-rigth{
+    
+    width: 30rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/****************************************navBottom************************************************************/
+
+.navBottom{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    color: #67676D;
+}
+.itermLink{
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 16rem;
+}
+.itermLink  span{
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #030307;
+}
+.itermSelect{
+    width: 50rem;
+    display: flex;
+    justify-content: space-between;
+}
+.itermSelect select{
+    
+    border: none;
+}
+
+
+/****************************************header img********************************************/
+
+.headerImg{
+    margin-top: 1.5rem;
+    background-size: cover;
+    background-image: url('../../../images/Rectangle\ 5.png');
+    height: 50rem;
+    width: 100%;
+}
+.headerImg{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5rem;
+}
+.card-iterm-img{
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 50px;
+    /* or 139% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.btn-img-iterm button{
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 9px 30px;
+    gap: 10px;
+    color: #FFFFFF;
+    width: 291px;
+    height: 50px;
+    left: 0px;
+    top: 182px;
+    text-align: center;
+    background: #000000;
+    border-radius: 8px;
+
+    font-family: 'Syne';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.3rem;
+}
+.btn-img-iterm button i{
+    display: flex;
+    align-items: center;
+}
