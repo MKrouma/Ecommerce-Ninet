@@ -8,7 +8,8 @@ import HearderImg from './HearderImg';
 function Navbar() {
   return (
     <>
-        <div className="NavContainer">
+        <div className='position'>
+            <div className="NavContainer">
             <div className="title-site">
                 <p>NINET</p>
             </div>
@@ -79,6 +80,8 @@ function Navbar() {
             {/* <p>Mini Sizes</p> */}
 
         </div>
+        </div>
+        
         <div>
             <HearderImg />
         </div>
