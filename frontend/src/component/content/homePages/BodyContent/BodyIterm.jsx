@@ -1,5 +1,6 @@
 import '../../../style/homePageCss/bodyCss/body-iterm.css'
-import DetailsIterm from '../../../style/homePageCss/bodyCss/DetailsIterm'
+import AvisClient from './AvisClient'
+import DetailsIterm from './DetailsIterm'
 
 function BodyIterm() {
   return (
@@ -99,7 +100,12 @@ function BodyIterm() {
         <div>
             <DetailsIterm />
         </div>
+        
       </div>
+      <div>
+        <AvisClient />
+      </div>
+  
     </>
   )
 }
