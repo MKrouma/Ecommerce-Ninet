@@ -93,8 +93,8 @@
 .itermLink{
     padding-left: 1rem;
     display: flex;
-    justify-content: space-around;
-    width: 16rem;
+    justify-content: space-between;
+    width: 8rem;
 }
 .itermLink  span{
     font-family: 'Syne';
