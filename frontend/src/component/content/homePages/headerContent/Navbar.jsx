@@ -34,7 +34,7 @@ function Navbar() {
                 <span>Home</span>
                 <p>Shop</p>
             </div>
-            <div className='itermSelect'>
+            {/* <div className='itermSelect'>
                 <div className="selectBrands">
                     <label >Brands</label>
                     <select name="" id="">
@@ -72,7 +72,7 @@ function Navbar() {
                     </select>
                 </div>
 
-            </div>
+            </div> */}
             <div className="itermLink">
                 <p>Mini Sizes</p>
                 <p> contact</p>
