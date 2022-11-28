@@ -14,11 +14,17 @@ Vous developpez en créant une branche pour chaque partie nommer comme suit : `N
 A la faire du developpement, il faut creer un Pull request pour la branche `develop`.
 
 ### Backend
-
+Developpement python django avec `shooping`. 
 
 ## Mise en production
 
 ### Branch model
+Pour le developpement nous aurons deux branches principales : 
+- master : application en production;
+- develop : application pour les tests d'intégration et le pull request vers master
+- features branch : pour chaque feature à developer et intégrer au produit. 
+
+Il faut éviter de faire de longue branche. Il faut privilégier une branche pour un feature à intégrer. 
 
 
 ### Deploiement
