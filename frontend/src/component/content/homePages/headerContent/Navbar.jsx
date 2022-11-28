@@ -2,7 +2,8 @@ import '../../../style/homePageCss/headerCss/NavBar.css';
 import { BsSearch } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { HiOutlineArrowRight } from 'react-icons/hi';
+import HearderImg from './HearderImg';
+
 
 function Navbar() {
   return (
@@ -78,19 +79,10 @@ function Navbar() {
             </div>
 
         </div>
-        <div className="headerImg">
-            <div className="container-box">
-                <div className="card-iterm-img">
-                    <p>Des remèdes naturels <br />
-                    issus du patrimoine,<br />
-                    renforcés par la science.</p>
-                </div>
-                <div className="btn-img-iterm">
-                    <button>consultez notre stock <i><HiOutlineArrowRight /></i></button>
-                </div>
-            </div>
-            
+        <div>
+            <HearderImg />
         </div>
+        
     </>
   )
 }
