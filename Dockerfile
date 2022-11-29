@@ -1,43 +1,27 @@
-# ==== CONFIGURE =====
-# Use a Node 16 base image
-FROM node:16-alpine as builder
+FROM python:3.10-slim-buster
 
-# Set the working directory to /app inside the container
-WORKDIR /app
+RUN apt-get update
 
-# Copy app files
-COPY frontend .
+# Add dependcies for pyscopg2, which django uses to connect to postgres sql database
+RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
 
-# ==== BUILD =====
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN npm ci 
+# Remove all the unecessary packages installed by the update command
+RUN rm -rf /var/lib/apt/lists/*
+RUN pip install --upgrade pip
 
-# Build the app
-RUN npm run build
+# Add new user so we don't run pip as root
+RUN adduser --disabled-login worker
+USER worker
 
-# ==== RUN =======
-# Set the env to "production"
-ENV NODE_ENV production
+WORKDIR /home/worker/app/backend
+COPY --chown=worker:worker ["backend/*.py", "backend/"]
+# COPY --chown=worker:worker ["sudan_art/", "sudan_art/"]
+# COPY --chown=worker:worker ["manage.py", "./"]
+# COPY --chown=worker:worker ["requirements.txt", "./"]
+COPY --chown=worker:worker ["manage.py", "requirements.txt", "./"]
 
-# Expose the port on which the app will be running (3000 is the default that `serve` uses)
-EXPOSE 3000
+ENV PATH="/home/worker/.local/bin:${PATH}"
+RUN pip install -r requirements.txt
 
-# Start the app
-CMD [ "npx", "serve", "build" ]
-
-
-# # Bundle static assets with nginx
-# FROM nginx:1.21.0-alpine as production
-# ENV NODE_ENV production
-
-# # Copy built assets from `builder` image
-# COPY --from=builder /app/build /usr/share/nginx/html
-
-# # Add your nginx.conf
-# COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
-
-# # Expose port
-# EXPOSE 80
-
-# # Start nginx
-# CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 8000
+CMD ["gunicorn", "--bind", ":8000", "--workers", "4", "backend.wsgi:application"]
