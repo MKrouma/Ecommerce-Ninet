@@ -3,6 +3,9 @@
 
 # custom
 /static
+/backend/migrations
+/backend/settings_production.py
+/config
 
 ### Django ###
 *.log
