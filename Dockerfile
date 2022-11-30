@@ -15,13 +15,13 @@ USER worker
 
 WORKDIR /home/worker/app/backend
 COPY --chown=worker:worker ["backend/*.py", "backend/"]
-# COPY --chown=worker:worker ["sudan_art/", "sudan_art/"]
-# COPY --chown=worker:worker ["manage.py", "./"]
-# COPY --chown=worker:worker ["requirements.txt", "./"]
-COPY --chown=worker:worker ["manage.py", "requirements.txt", "./"]
+COPY --chown=worker:worker ["backend/templates", "backend/templates"]
+COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
 
 ENV PATH="/home/worker/.local/bin:${PATH}"
-RUN pip install -r requirements.txt
 
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+RUN chmod 500 startserver.sh
 EXPOSE 8000
-CMD ["gunicorn", "--bind", ":8000", "--workers", "4", "backend.wsgi:application"]
+CMD ./startserver.sh

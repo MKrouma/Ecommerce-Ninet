@@ -31,6 +31,19 @@ sudo docker stop {CONTAINER_ID}
 
 
 # 2. Dockerize django app
-sudo docker build ./backend/. -t dockerized-django
+sudo docker build . -t dockerized-django
 sudo docker images | grep dockerized-django
-sudo docker run -p 8000:8000 -d dockerized-django
+sudo docker run -p 8000:8000 -d dockerized-django 
+--env-file ./config/.env.prod
+
+
+
+
+
+# 3. Docker compose
+sudo docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d ninetshopping.com
+sudo docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d ninetshopping.comyoursite.com
+sudo docker compose run --rm certbot renew
+
+sudo docker-compose --env-file .env up --build
+sudo docker-compose up --build

@@ -11,6 +11,8 @@
 python manage.py makemigrations backend (first migration)
 python manage.py makemigrations
 python manage.py migrate
+
+python manage.py createsuperuser
 ```
 
 ## Shell Data API
