@@ -78,7 +78,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ninetshopping",
+        "NAME": "ninetshopping_staging",
         "USER": "mahadou",
         "HOST": "db-postgresql-lon1-33195-do-user-12986561-0.b.db.ondigitalocean.com",
         "PORT": 25060,
