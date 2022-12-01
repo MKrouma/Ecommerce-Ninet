@@ -1,26 +1,19 @@
-# LAYER 1 : REACT
-
 FROM node AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-
 # RUN npm test - if you want to test before to build
 RUN npm run build
 
-
-# LAYER 2 : NGINX
 FROM nginx:alpine AS prod
-
-# Define nginx config
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
+# RUN rm /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/conf.d
 
 WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/build .
 EXPOSE 80
-# Run nginx with global directives and daemon off
+# run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 

@@ -10,6 +10,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load env
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^inouh^&6aegm$5dp+^iwxl42fleax5_23m3h-=sli3l79q$cp"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DJANGO_DEBUG", default=0))
 
-ALLOWED_HOSTS = []
+# 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
+# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
 
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
+    "storages"
 ]
 
 MIDDLEWARE = [
@@ -77,12 +84,12 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ninetshopping",
-        "USER": "mahadou",
-        "HOST": "db-postgresql-lon1-33195-do-user-12986561-0.b.db.ondigitalocean.com",
-        "PORT": 25060,
-        "PASSWORD": "5f62a936771c26ac2910f08a",
+        "ENGINE": os.getenv("DATABASE_ENGINE"),
+        "NAME": os.getenv("DATABASE_NAME"),
+        "USER": os.getenv("DATABASE_USERNAME"),
+        "PASSWORD": os.getenv("DATABASE_PASSWORD"),
+        "HOST": os.getenv("DATABASE_HOST"),
+        "PORT": os.getenv("DATABASE_PORT"),
     }
 }
 
@@ -126,7 +133,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
+    'http://frontend_react:80'
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.mydomain.com',
+    'https://*.127.0.0.1'
+    'https://frontend_react',
+    'http://localhost:3000'
+]
+CSRF_COOKIE_SECURE = False
+
 
 PUBLIC_MEDIA_LOCATION = "media"
 
@@ -147,9 +164,25 @@ CACHES = {
     }
 }
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = "ninetshoppingstorage"
+AWS_S3_ENDPOINT_URL = "https://fra1.digitaloceanspaces.com"
+AWS_S3_OBJECT_PARAMETERS = {
+    "CacheControl": "max-age=86400",
+     "ACL": "public-read"
+}
+AWS_LOCATION = "static"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+# Logging
+# Define our to log from server
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -163,6 +196,8 @@ LOGGING = {
     "loggers": {"": {"level": "INFO", "handlers": ["console"]}},
 }
 
+# Threesold
+# Data size and threesold
 DATA_UPLOAD_MAX_MEMORY_SIZE = 11000000
 
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10000000

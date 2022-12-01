@@ -1,33 +1,81 @@
 # Ecommerce-Ninet
 Projet de développement d'un site de ecommerce pour Ninet Shooping. 
 
-## Conception 
-Pour la concéption, nous avons demandé à un designer de réproduire le site suivant selon nos attentes [dreamskin](https://dreamskinhaven.co.ke/).
+## Design 
+Nous avons proposé au designer de reproduire le site [dreamskin](https://dreamskinhaven.co.ke/). \
+Le design de l'application est donc disponible [ici]().
 
-Notre design final est le suivant [OwnDesign](https://www.figma.com/file/wNwPpNXkRZxp9C9i2yyQWx/Ninet?node-id=0%3A1).
+## Application
+La stack technique est la suivante :
+- `frontend`: react JS;
+- `backend` : django (rest framework);
+- `database` : postgres.
 
-## Developpement
 
 ### Frontend
-Suivant la partie à developper, veuillez le faire seulement dans le dossier `Frontend`;
-Vous developpez en créant une branche pour chaque partie nommer comme suit : `NOM_code`; 
-A la faire du developpement, il faut creer un Pull request pour la branche `develop`.
+```
+cd fronted
+npm i
+npm start
+
+npm build (pour le deploiement)
+```
 
 ### Backend
-Developpement python django avec `shooping`. 
+Avant de deployer, il faut s'assurer d'avoir votre fichier `.env`. 
+Il répresente les variables d'environnement. 
+Dans le dossier `Ecommerce-Ninet`, appliquer les instrictions : 
 
-## Mise en production
+```
+python -V
+python -m venv .venv
+source .venv/bin/activate (linux) | .venv\Script\activate (windows)
+pip install -r requirements.txt
 
+python manage.py runserver 8000
+```
+
+Si vous êtes sur linux, pour pouvez lancer tout le code au dessus depuis le fichier `backend.sh` avec le code suivant :
+```
+bash backend.sh 8001
+```
+
+### Database
+La base de donnée est deployée dans un serveur RDMS Postgres sur Digital Ocean. 
+Si vous avez comme reponse `Waiting for postgres...`, cela signifie que 
+votre adresse IP n'est pas accepté comme point d'entrée pour le serveur. 
+Il faudra donc en discuter avec @mkrouma. 
+
+Nous avons :
+- ninetshopping_staging : base de données de developpement;
+- ninetshooping_production : base de données de production. 
+
+
+## Contribution
 ### Branch model
 Pour le developpement nous aurons deux branches principales : 
 - master : application en production;
-- develop : application pour les tests d'intégration et le pull request vers master
+- develop : application pour les tests d'intégration et le pull request vers master;
 - features branch : pour chaque feature à developer et intégrer au produit. 
 
-Il faut éviter de faire de longue branche. Il faut privilégier une branche pour un feature à intégrer. 
-Feature_branch_name = {DEVELOPER}_ISSUENUMBER_COMMENT
+Il faut éviter de faire de longue branche. Il faut privilégier une branche pour un feature à intégrer. \
+Feature_branch_name = `{DEVELOPER}_ISSUENUMBER_COMMENT`.
 
-### Deploiement
+Pour avoir une vue, sur les prochaines étapes du projet, vous pensez regarder le projet associé au repo, [Ninet shopping github project](https://github.com/users/MKrouma/projects/6)
+
+## Deploiement
+L'architecture des applications (frontend/backend) est une architecture distribuée en microservices.  Nous allons donc créer un container pour nos services et les orchestrer avec docker-compose. 
+
+Cette operation est reservée à @mkrouma. 
+
+`dev dc` : sudo docker-compose up -d --build \
+`prod dc` : sudo docker-compose -f docker-compose.prod.yml up -d --build
 
 
-### 
+## Tips
+```
+python -c "import secrets; print(secrets.token_hex(12))"
+```
+
+## Auteur
+😃 `geodaftar.com`

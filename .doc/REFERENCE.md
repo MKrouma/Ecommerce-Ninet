@@ -13,3 +13,6 @@ https://fabric.inc/blog/ecommerce-database-design-example/
 
 ## Digital Ocean
 [Digital ocean deployment](https://medium.com/geekculture/deploy-a-mvp-django-react-web-application-to-digital-ocean-1a35a4359a5b)
+
+# Deploy Django App
+[Dockerize django](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
