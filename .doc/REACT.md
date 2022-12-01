@@ -43,6 +43,12 @@ sudo docker compose run --rm  certbot certonly --webroot --webroot-path /var/www
 sudo docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d ninetshopping.comyoursite.com
 sudo docker compose run --rm certbot renew
 
-sudo docker-compose --env-file .env.dev up --build (dev)
-sudo docker-compose up --build (dev)
-sudo docker-compose -f docker-compose.prod.yml up -d --build (prod)
+sudo docker-compose --env-file .env.dev up --build (dev-docker)
+sudo docker-compose up --build (dev-local)
+sudo docker-compose -f docker-compose.prod.yml up -d --build (prod-docker)
+
+
+# Collect static
+sudo docker-compose -f docker-compose.prod.yml up -d --build
+sudo docker-compose -f docker-compose.prod.yml exec backend_django python manage.py migrate --noinput
+sudo docker-compose -f docker-compose.prod.yml exec backend_django python manage.py collectstatic --no-input --clear

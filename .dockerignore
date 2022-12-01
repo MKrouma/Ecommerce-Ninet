@@ -10,3 +10,6 @@ frontend/
 media/
 db.sqlite3
 style.md
+
+static_volume/
+staticfiles/

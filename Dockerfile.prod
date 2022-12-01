@@ -47,11 +47,26 @@ RUN mkdir -p /home/app
 
 # create the app user
 # RUN addgroup -S app && adduser -S app -G app
+# RUN addgroup -g 1001 -S app && app -u 1001 -S app -G app 
+ARG USERNAME=app
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    #
+    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # create the appropriate directories
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
 RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/static
 WORKDIR $APP_HOME
 
 # install dependencies
@@ -60,6 +75,7 @@ RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
 RUN apt install -y netcat
 COPY --from=builder /home/worker/app/wheels /wheels
 COPY --from=builder /home/worker/app/requirements.txt .
+RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 
 # copy entrypoint.prod.sh
@@ -74,10 +90,10 @@ RUN chmod 500 entrypoint.prod.sh
 COPY . $APP_HOME
 
 # chown all the files to the app user
-# RUN chown -R app:app $APP_HOME
+RUN chown -R app:app $APP_HOME
 
 # change to the app user
-# USER app
+USER app
 
 # run entrypoint.prod.sh
 ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]

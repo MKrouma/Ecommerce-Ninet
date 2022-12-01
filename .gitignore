@@ -10,6 +10,7 @@ config.md
 .vscode
 .env.dev
 .env.prod
+staticfiles
 
 ### Django ###
 *.log

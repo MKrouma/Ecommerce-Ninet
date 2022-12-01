@@ -18,7 +18,7 @@ USER worker
 WORKDIR /home/worker/app/
 COPY --chown=worker:worker ["backend/*.py", "backend/"]
 COPY --chown=worker:worker ["backend/templates", "backend/templates"]
-COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
+COPY --chown=worker:worker ["manage.py", "requirements.txt", "./"]
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -32,6 +32,6 @@ RUN pip install -r requirements.txt
 COPY ./backend/entrypoint.sh .
 
 # Run entrypoint.sh
-RUN chmod 500 startserver.sh
+# RUN chmod 500 entrypoint.sh
 ENTRYPOINT ["/home/worker/app/entrypoint.sh"]
 

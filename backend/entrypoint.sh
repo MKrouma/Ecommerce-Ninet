@@ -9,6 +9,8 @@ then
     done
 
     echo "PostgreSQL started"
+    echo "collectstatic"
+    python manage.py collectstatic --noinput
 fi
 
 # python manage.py flush --no-input

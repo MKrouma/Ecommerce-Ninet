@@ -9,6 +9,9 @@ then
     done
 
     echo "PostgreSQL started"
+    echo "migrate & collectstatic"
+    python manage.py migrate --noinput
+    python manage.py collectstatic --no-input --clear
 fi
 
 if [ "$DOCKER_COMPOSE" = "0" ]
