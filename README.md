@@ -73,8 +73,40 @@ Cette operation est reservée à @mkrouma.
 
 
 ## Tips
+`PYTHON`\
+secrets token
 ```
 python -c "import secrets; print(secrets.token_hex(12))"
+```
+
+`DJANGO`\
+project & app
+```
+django-admin startproject {PROJECT_NAME} .
+```
+
+migrate
+```
+python manage.py makemigrations backend (first migration)
+python manage.py makemigrations
+python manage.py migrate
+```
+
+superuser 
+```
+python manage.py createsuperuser
+```
+
+shell & data api
+```
+python manage.py shell
+from backend.models import Product
+Product.objects.all()
+Product.objects.all().values()
+Product.objects.all().filter(name="ordinary")
+Product.objects.get(id=1) 
+Product.objects.filter(id=1).update(price=20000) 
+Product.objects.get(id=4).delete()
 ```
 
 ## Auteur
