@@ -31,3 +31,10 @@ Feature_branch_name = {DEVELOPER}_ISSUENUMBER_COMMENT
 
 
 ### 
+sudo docker-compose up -d --build (dev)
+sudo docker-compose -f docker-compose.prod.yml down -v (prod)
+sudo docker-compose -f docker-compose.prod.yml up -d --build
+
+
+## generate secret
+python -c "import secrets; print(secrets.token_hex(12))"

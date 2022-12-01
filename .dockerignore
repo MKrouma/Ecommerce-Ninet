@@ -1,3 +1,12 @@
-/backend/__pycache__
-/backend/migrations
-settings_production.py
+.venv/
+backend/__pycache__
+backend/migrations
+certbot/
+design/
+django_vol/
+doc/
+draft/
+frontend/
+media/
+db.sqlite3
+style.md

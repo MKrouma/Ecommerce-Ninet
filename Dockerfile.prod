@@ -1,0 +1,83 @@
+###########
+# BUILDER #
+###########
+
+# pull official base image
+FROM python:3.10-slim-buster as builder
+
+# set work directory
+WORKDIR /home/worker/app/
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Add dependcies for pyscopg2, which django uses to connect to postgres sql database
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
+RUN apt install -y netcat
+
+# Remove all the unecessary packages installed by the update command
+RUN rm -rf /var/lib/apt/lists/*
+
+# Copy files
+# COPY --chown=worker:worker ["backend/*.py", "backend/"]
+# COPY --chown=worker:worker ["backend/templates", "backend/templates"]
+# COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
+
+# Lint
+RUN pip install --upgrade pip
+RUN pip install flake8==3.9.2
+COPY . .
+# RUN flake8 --ignore=E501,F401 .
+
+# Install dependencies
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /home/worker/app/wheels -r requirements.txt
+
+
+#########
+# FINAL #
+#########
+
+# pull official base image
+FROM python:3.10-slim-buster
+
+# create directory for the app user
+RUN mkdir -p /home/app
+
+# create the app user
+# RUN addgroup -S app && adduser -S app -G app
+
+# create the appropriate directories
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/web
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+# install dependencies
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
+RUN apt install -y netcat
+COPY --from=builder /home/worker/app/wheels /wheels
+COPY --from=builder /home/worker/app/requirements.txt .
+RUN pip install --no-cache /wheels/*
+
+# copy entrypoint.prod.sh
+COPY ./backend/entrypoint.prod.sh .
+RUN chmod 500 entrypoint.prod.sh
+
+# copy project
+# Copy files
+# COPY --chown=worker:worker ["backend/*.py", "backend/"]
+# COPY --chown=worker:worker ["backend/templates", "backend/templates"]
+# COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
+COPY . $APP_HOME
+
+# chown all the files to the app user
+# RUN chown -R app:app $APP_HOME
+
+# change to the app user
+# USER app
+
+# run entrypoint.prod.sh
+ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]

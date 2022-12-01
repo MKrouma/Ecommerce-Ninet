@@ -6,6 +6,10 @@
 /backend/migrations
 /backend/settings_production.py
 /config
+config.md
+.vscode
+.env.dev
+.env.prod
 
 ### Django ###
 *.log
