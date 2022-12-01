@@ -16,6 +16,7 @@ RUN adduser --disabled-login worker
 USER worker
 
 WORKDIR /home/worker/app/
+# RUN mkdir /home/worker/app/static
 COPY --chown=worker:worker ["backend/*.py", "backend/"]
 COPY --chown=worker:worker ["backend/templates", "backend/templates"]
 COPY --chown=worker:worker ["manage.py", "requirements.txt", "./"]
