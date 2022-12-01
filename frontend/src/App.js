@@ -1,13 +1,19 @@
-import BodyIterm from "./component/content/homePages/BodyContent/BodyIterm";
-import Navbar from "./component/content/homePages/headerContent/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Contact from "./component/content/contactPages/contact/Contact";
+import Home from "./component/content/homePages/home/Home";
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <BodyIterm />
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}>
+            <Route index element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
