@@ -34,7 +34,7 @@ function Navbar() {
         </div>
         <div className="navBottom">
             <div className="itermLink">
-                <Link className='linkClass' to="/home"><span>Home</span></Link>
+                <Link className='linkClass' to="/"><span>Home</span></Link>
                 <Link className='linkClass' to="/shop"><p>Shop</p></Link>
             </div>
             {/* <div className='itermSelect'>
