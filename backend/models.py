@@ -1,6 +1,7 @@
 from django.db import models
 
-class Product(models.Model) :
+
+class Product(models.Model):
     """ Product model
     """
 
@@ -16,5 +17,5 @@ class Product(models.Model) :
     img_file = models.FileField()
     # default="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
 
-    def __str__(self) :
+    def __str__(self):
         return self.name

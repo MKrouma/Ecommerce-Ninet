@@ -37,7 +37,7 @@ python manage.py runserver 8000
 
 Si vous êtes sur linux, pour pouvez lancer tout le code au dessus depuis le fichier `backend.sh` avec le code suivant :
 ```
-bash backend.sh 8001
+bash runner.sh 8001
 ```
 
 ### Database
@@ -68,13 +68,50 @@ L'architecture des applications (frontend/backend) est une architecture distribu
 
 Cette operation est reservée à @mkrouma. 
 
-`dev dc` : sudo docker-compose up -d --build \
-`prod dc` : sudo docker-compose -f docker-compose.prod.yml up -d --build
-
+`dev dc`
+```
+sudo docker-compose up -d --build
+```
+`prod dc`
+```
+sudo docker-compose -f docker-compose.prod.yml up -d --build
+```
 
 ## Tips
+`PYTHON`\
+secrets token
 ```
 python -c "import secrets; print(secrets.token_hex(12))"
+```
+
+`DJANGO`\
+project & app
+```
+django-admin startproject {PROJECT_NAME} .
+```
+
+migrate
+```
+python manage.py makemigrations backend (first migration)
+python manage.py makemigrations
+python manage.py migrate
+```
+
+superuser 
+```
+python manage.py createsuperuser
+```
+
+shell & data api
+```
+python manage.py shell
+from backend.models import Product
+Product.objects.all()
+Product.objects.all().values()
+Product.objects.all().filter(name="ordinary")
+Product.objects.get(id=1) 
+Product.objects.filter(id=1).update(price=20000) 
+Product.objects.get(id=4).delete()
 ```
 
 ## Auteur

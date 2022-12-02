@@ -13,23 +13,18 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Add dependcies for pyscopg2, which django uses to connect to postgres sql database
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
-RUN apt install -y netcat
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libpq-dev gcc python3-dev && \
+    apt install -y netcat
 
 # Remove all the unecessary packages installed by the update command
 RUN rm -rf /var/lib/apt/lists/*
 
-# Copy files
-# COPY --chown=worker:worker ["backend/*.py", "backend/"]
-# COPY --chown=worker:worker ["backend/templates", "backend/templates"]
-# COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
-
-# Lint
-RUN pip install --upgrade pip
-RUN pip install flake8==3.9.2
+# Linting
+RUN pip install --upgrade pip && \
+    pip install flake8
 COPY . .
-# RUN flake8 --ignore=E501,F401 .
+# RUN flake8 --ignore=E501,F401 ./backend/
 
 # Install dependencies
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /home/worker/app/wheels -r requirements.txt
@@ -65,28 +60,24 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # create the appropriate directories
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
-RUN mkdir $APP_HOME
-RUN mkdir $APP_HOME/static
+RUN mkdir $APP_HOME && mkdir $APP_HOME/static
 WORKDIR $APP_HOME
 
 # install dependencies
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends libpq-dev gcc python3-dev
-RUN apt install -y netcat
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libpq-dev gcc python3-dev && \
+    apt install -y netcat
 COPY --from=builder /home/worker/app/wheels /wheels
 COPY --from=builder /home/worker/app/requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install --no-cache /wheels/*
+RUN pip install --upgrade pip && \
+    pip install --no-cache /wheels/*
 
 # copy entrypoint.prod.sh
-COPY ./backend/entrypoint.prod.sh .
-RUN chmod 500 entrypoint.prod.sh
+COPY ./backend/entrypoint.prod.sh ./backend/
+RUN chmod 500 ./backend/entrypoint.prod.sh
 
 # copy project
 # Copy files
-# COPY --chown=worker:worker ["backend/*.py", "backend/"]
-# COPY --chown=worker:worker ["backend/templates", "backend/templates"]
-# COPY --chown=worker:worker ["manage.py", "requirements.txt", "backend/startserver.sh", "./"]
 COPY . $APP_HOME
 
 # chown all the files to the app user
@@ -96,4 +87,4 @@ RUN chown -R app:app $APP_HOME
 USER app
 
 # run entrypoint.prod.sh
-ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
+ENTRYPOINT ["/home/app/web/backend/entrypoint.prod.sh"]
