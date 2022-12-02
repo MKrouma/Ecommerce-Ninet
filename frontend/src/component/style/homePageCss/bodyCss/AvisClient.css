@@ -17,19 +17,30 @@
     width: 100%;
     
 }
+.Client-display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 .iterm-avis{
     display: flex;
     justify-content: space-between;
-    position: relative;
+    
     width: 40rem;
     height: 14rem;
     
+}
+.iterm-swich-rigth{
+    margin-left: 5rem;
 }
 .user-picture img{
     margin-left: .5rem;
 }
 .iterm-icons-rigth{
     display: flex;
+    width: 100%;
     height: 100%;
     align-items: flex-end;
 }
@@ -43,7 +54,6 @@
     display: flex;
     align-items: center;
     font-size: .7rem;
-    position: absolute;
     right: 8%;
     top: 24%;
     width: 33rem;
