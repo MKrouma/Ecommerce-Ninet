@@ -1,5 +1,6 @@
 import React from 'react'
 import BodyIterm from '../BodyContent/BodyIterm'
+import Footer from '../footerContent/Footer'
 import Navbar from '../headerContent/Navbar'
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
     <>
         <Navbar />
         <BodyIterm />
+        <Footer />
     </>
   )
 }

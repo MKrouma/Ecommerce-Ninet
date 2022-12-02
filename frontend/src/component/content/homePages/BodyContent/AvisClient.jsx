@@ -49,6 +49,15 @@ function AvisClient() {
                 </div>
                 
             </div>
+            <div>
+                <div className="titleBody">
+                    <div className="left"></div>
+                    <div className="title">
+                        <p>Notre sélection la plus fine</p>
+                    </div>
+                    <div className="rigth"></div>
+                </div>
+            </div>
         </div>
     </>
   )

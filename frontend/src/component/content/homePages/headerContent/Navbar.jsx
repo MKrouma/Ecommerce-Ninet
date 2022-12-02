@@ -34,7 +34,7 @@ function Navbar() {
         <div className="navBottom">
             <div className="itermLink">
                 <span>Home</span>
-                <p>Shop</p>
+                <Link to="/shop"><p>Shop</p></Link>
             </div>
             {/* <div className='itermSelect'>
                 <div className="selectBrands">
