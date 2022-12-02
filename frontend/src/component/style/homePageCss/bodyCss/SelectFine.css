@@ -1,5 +1,8 @@
 .containerSelect{
     height: 45rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .contentLeft-select{
@@ -16,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    position: relative;
+    
     width: 510px;
     height: 510px;
 
@@ -30,7 +33,7 @@
     
 }
 .imgSelect-2{
-    position: relative;
+    
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -49,7 +52,7 @@
 .infoProduit-1{
     top: 30rem;
     background-color: #F8F8F8;
-    position: absolute;
+    
     width: 294px;
     height: 190px;
     box-shadow: 10px 6px 6px -1px rgba(0, 0, 0, 0.09);
@@ -57,7 +60,7 @@
 .infoProduit-2 {
     top: 30rem;
     background-color: #F8F8F8;
-    position: absolute;
+    
     width: 294px;
     height: 190px;
     box-shadow: 10px 6px 6px -1px rgba(0, 0, 0, 0.09);
@@ -164,4 +167,9 @@
 
     background: #030307;
     border-radius: 8px;
+}
+.contentDiplay-iterm{
+    width: 510px;
+    display: flex;
+    justify-content: center;
 }
