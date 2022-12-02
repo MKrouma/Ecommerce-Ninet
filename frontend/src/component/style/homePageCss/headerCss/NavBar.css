@@ -1,3 +1,5 @@
+
+
 .NavContainer{
     display: flex;
     justify-content: space-between;
@@ -101,11 +103,21 @@
     color: #67676D;
 }
 .itermLink{
+    text-decoration: none;
+    border-bottom: none;
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
     width: 8rem;
+    color: #000000;
 }
+.linkClass{
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    color: #000000;
+}
+
 .itermLink  span{
     font-family: 'Syne';
     font-style: normal;

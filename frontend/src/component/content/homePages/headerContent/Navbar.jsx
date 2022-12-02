@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <>
-        <div className='position'>
+        <div className="navPosition">
+            <div className='position'>
             <div className="NavContainer">
             <div className="title-site">
                 <p>NINET</p>
@@ -33,8 +34,8 @@ function Navbar() {
         </div>
         <div className="navBottom">
             <div className="itermLink">
-                <span>Home</span>
-                <Link to="/shop"><p>Shop</p></Link>
+                <Link className='linkClass' to="/shop"><span>Home</span></Link>
+                <Link className='linkClass' to="/shop"><p>Shop</p></Link>
             </div>
             {/* <div className='itermSelect'>
                 <div className="selectBrands">
@@ -78,7 +79,7 @@ function Navbar() {
             
             
                 <div className="itermLink">
-                    <Link to="/contact"><p> contact</p></Link>
+                    <Link className='linkClass' to="/contact"><p> contact</p></Link>
                 </div>
             {/* <p>Mini Sizes</p> */}
 
@@ -87,6 +88,8 @@ function Navbar() {
         
         <div>
             <HearderImg />
+        </div>
+        
         </div>
         
     </>

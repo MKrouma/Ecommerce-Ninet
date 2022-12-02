@@ -16,7 +16,8 @@ function AvisClient() {
                     </p>
                 </div>
                 <div className="box-in-content">
-                    <div className="box-iterm">
+                    
+                        <div className="box-iterm">
                         <div className="iterm-swich-left">
                             <i><AiOutlineLeft /></i>
                         </div>
@@ -24,18 +25,21 @@ function AvisClient() {
                             <div className="iterm-icons-left">
                                 <img src={leftPicture} alt="" />
                             </div>
-                            <div className="box-avis">
-                                <div className="user-picture">
-                                    <img src={userPicture} alt="" />
-                                </div>
-                                <div className="user-avis">
-                                    <p>Cc chérie j'espère que tu vas. bien Vraiment merci beaucoup pour tes produits ça 
-                                        faire des merveilles, je te contacterai très bientôt pour en prendre encore 
-                                        passe une excellente journée 
-                                    </p>
-                                        <div className="user-name">
-                                            <p>Elisa zoro, Client vérifié</p>
-                                        </div>
+                            <div className='Client-display'>
+                                <div className="box-avis">
+                                    
+                                    <div className="user-picture">
+                                        <img src={userPicture} alt="" />
+                                    </div>
+                                    <div className="user-avis">
+                                        <p>Cc chérie j'espère que tu vas. bien Vraiment merci beaucoup pour tes produits ça 
+                                            faire des merveilles, je te contacterai très bientôt pour en prendre encore 
+                                            passe une excellente journée 
+                                        </p>
+                                            <div className="user-name">
+                                                <p>Elisa zoro, Client vérifié</p>
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="iterm-icons-rigth">
@@ -46,6 +50,8 @@ function AvisClient() {
                             <i><AiOutlineRight /></i>
                         </div>
                     </div>
+                    
+                    
                 </div>
                 
             </div>
