@@ -7,6 +7,56 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 40px;
-    height: 10rem;
+    height: 8rem;
     align-items: center;
+    
+}
+.box-in-content{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+.iterm-avis{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 40rem;
+    height: 14rem;
+    
+}
+.user-picture img{
+    margin-left: .5rem;
+}
+.iterm-icons-rigth{
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
+.box-iterm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box-avis{
+    box-shadow: -3px 6px 19px -4px rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    font-size: .7rem;
+    position: absolute;
+    right: 8%;
+    top: 24%;
+    width: 33rem;
+    height: 7rem;
+    background-color: white;
+    border-radius: .5rem;
+}
+.user-avis {
+    margin-left: .5rem ;
+    width: 25rem;
+    
+    
+}
+.user-name{
+    margin-top: .5rem;
 }

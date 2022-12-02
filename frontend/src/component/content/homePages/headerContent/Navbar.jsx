@@ -3,6 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import HearderImg from './HearderImg';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -33,7 +34,7 @@ function Navbar() {
         <div className="navBottom">
             <div className="itermLink">
                 <span>Home</span>
-                <p>Shop</p>
+                <Link to="/shop"><p>Shop</p></Link>
             </div>
             {/* <div className='itermSelect'>
                 <div className="selectBrands">
@@ -74,9 +75,11 @@ function Navbar() {
                 </div>
 
             </div> */}
-            <div className="itermLink">
-                <p> contact</p>
-            </div>
+            
+            
+                <div className="itermLink">
+                    <Link to="/contact"><p> contact</p></Link>
+                </div>
             {/* <p>Mini Sizes</p> */}
 
         </div>
