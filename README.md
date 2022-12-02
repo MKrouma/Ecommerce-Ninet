@@ -37,7 +37,7 @@ python manage.py runserver 8000
 
 Si vous êtes sur linux, pour pouvez lancer tout le code au dessus depuis le fichier `backend.sh` avec le code suivant :
 ```
-bash backend.sh 8001
+bash runner.sh 8001
 ```
 
 ### Database
@@ -68,9 +68,14 @@ L'architecture des applications (frontend/backend) est une architecture distribu
 
 Cette operation est reservée à @mkrouma. 
 
-`dev dc` : sudo docker-compose up -d --build \
-`prod dc` : sudo docker-compose -f docker-compose.prod.yml up -d --build
-
+`dev dc`
+```
+sudo docker-compose up -d --build
+```
+`prod dc`
+```
+sudo docker-compose -f docker-compose.prod.yml up -d --build
+```
 
 ## Tips
 `PYTHON`\
