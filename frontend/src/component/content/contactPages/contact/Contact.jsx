@@ -1,12 +1,16 @@
 import React from 'react';
-import ContactSection from '../ContactSection';
+import Footer from '../../homePages/footerContent/Footer';
+import ContactBody from '../contact-body/ContactBody';
+import ContactNav from '../contact-hearder/ContactNav';
+
 
 
 export default function Contact() {
   return (
     <>
-      <ContactSection />
-      
+      <ContactNav />
+      <ContactBody />
+      <Footer />
     </>
   );
 }

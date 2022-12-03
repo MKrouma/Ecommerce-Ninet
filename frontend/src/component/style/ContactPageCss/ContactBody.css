@@ -1,0 +1,159 @@
+.contentImgForm img{
+    width: 620px;
+    height: 34rem;
+    left: 740px;
+    top: 208px;
+    border-radius: 1rem;
+    box-shadow: 3px 11px 15px -11px rgba(0, 0, 0, 0.68);
+}
+.containerContact{
+    padding: 12rem 2rem 3rem 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contentForm{
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 620px;
+    height: 34rem;
+    
+    box-shadow: 3px 11px 15px -11px rgba(0, 0, 0, 0.68);
+}
+.titleContact p{
+    margin-bottom: .6rem;
+    width: 288px;
+    height: 38px;
+    left: 80px;
+    top: 208px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+
+    color: #030307;
+}
+.paragraphe p{
+    margin-bottom: 1rem;
+    width: 510px;
+    height: 19px;
+    left: 80px;
+    top: 266px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: #030307;
+}
+.userProfil{
+    width: 32rem;
+    display: flex;
+    justify-content: space-between;
+}
+.formNameuser input{
+    padding: 13px 12px;
+    width: 15rem;
+        gap: 12px;
+        margin-top: .4rem;
+        left: 0%;
+        right: 0%;
+        top: 37.18%;
+        bottom: -1.28%;
+    
+        background: #FFFFFF;
+        border: 1px solid #DFDFE6;
+        /* Shadow button */
+    
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+}
+.formNameuser p{
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'fina' on,
+        'init' on;
+
+    color: #030307;
+}
+.formName p{
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-feature-settings: 'fina' on,
+        'init' on;
+
+    color: #030307;
+}
+.formName input{
+    margin-top: .4rem;
+    padding: 13px 12px;
+    gap: 12px;
+    width: 32rem;
+    height: 2.5rem;
+   
+
+    background: #FFFFFF;
+    border: 1px solid #DFDFE6;
+    /* Shadow button */
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+.buttonSubmit{
+    width: 32rem;
+    display: flex;
+    justify-content: center;
+}
+.buttonSubmit button{
+    
+    
+        font-family: 'Syne';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        
+        /* identical to box height, or 162% */
+    
+        
+    
+        color: #FFFFFF;
+    margin-top: 1rem;
+    padding: 9px 12px;
+        gap: 10px;
+    
+        
+        width: 510px;
+        height: 48px;
+        left: 80px;
+        top: 884px;
+        color: white;
+        background: #030307;
+        border-radius: 8px;
+}
+.CheckboxContent input{
+    margin-top: 1rem;
+}
