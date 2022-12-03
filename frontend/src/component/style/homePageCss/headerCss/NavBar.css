@@ -1,3 +1,5 @@
+
+
 .NavContainer{
     display: flex;
     justify-content: space-between;
@@ -101,11 +103,21 @@
     color: #67676D;
 }
 .itermLink{
+    text-decoration: none;
+    border-bottom: none;
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
     width: 8rem;
+    color: #000000;
 }
+.linkClass{
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    color: #000000;
+}
+
 .itermLink  span{
     font-family: 'Syne';
     font-style: normal;
@@ -142,6 +154,19 @@
     align-items: center;
     padding-right: 5rem;
 }
+.ShopImg {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5rem;
+}
+.ShopImg {
+
+    background-size: cover;
+    background-image: url('../../../images/shopImg.png');
+    height: 50rem;
+    width: 100%;
+}
 .card-iterm-img{
     font-family: 'Syne';
     font-style: normal;
@@ -154,6 +179,19 @@
     align-items: center;
 
     color: #000000;
+}
+.card-iterm-img-shop {
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 50px;
+    /* or 139% */
+
+    display: flex;
+    align-items: center;
+
+    color: white;
 }
 .btn-img-iterm button{
     margin-top: 1.5rem;

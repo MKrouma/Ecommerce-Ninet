@@ -14,7 +14,7 @@ La stack technique est la suivante :
 
 ### Frontend
 ```
-cd fronted
+cd frontend
 npm i
 npm start
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 python manage.py runserver 8000
 ```
 
-Si vous êtes sur linux, pour pouvez lancer tout le code au dessus depuis le fichier `backend.sh` avec le code suivant :
+Si vous êtes sur linux, pour pouvez lancer tout le code au dessus depuis le fichier `runner.sh` avec le code suivant :
 ```
 bash runner.sh 8001
 ```
@@ -43,7 +43,7 @@ bash runner.sh 8001
 ### Database
 La base de donnée est deployée dans un serveur RDMS Postgres sur Digital Ocean. 
 Si vous avez comme reponse `Waiting for postgres...`, cela signifie que 
-votre adresse IP n'est pas accepté comme point d'entrée pour le serveur. 
+votre adresse IP n'est pas acceptée comme point d'entrée pour le serveur. 
 Il faudra donc en discuter avec @mkrouma. 
 
 Nous avons :
@@ -92,7 +92,7 @@ django-admin startproject {PROJECT_NAME} .
 
 migrate
 ```
-python manage.py makemigrations backend (first migration)
+python manage.py makemigrations {PROJECT_NAME} (first migration)
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -114,5 +114,14 @@ Product.objects.filter(id=1).update(price=20000)
 Product.objects.get(id=4).delete()
 ```
 
+`DROPLET`\
+project & app
+```
+ssh -i ~/.ssh/id_rsa_2 mahadou@ADRESS_IP
+```
+
 ## Auteur
+Ibrahim @ibrahim-abdullah2 \
+Moussa @devvamoussa \
+Mahadou @mkrouma \
 😃 `geodaftar.com`

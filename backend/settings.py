@@ -133,14 +133,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    'http://frontend_react:80'
+    'http://frontend_react:80',
+    'http://localhost:443'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.mydomain.com',
-    'https://*.127.0.0.1'
+    'https://*.127.0.0.1',
     'https://frontend_react',
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://localhost:443'
 ]
 CSRF_COOKIE_SECURE = False
 
@@ -172,7 +174,7 @@ AWS_STORAGE_BUCKET_NAME = "ninetshoppingstorage"
 AWS_S3_ENDPOINT_URL = "https://fra1.digitaloceanspaces.com"
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "max-age=86400",
-     "ACL": "public-read"
+    "ACL": "public-read"
 }
 AWS_LOCATION = "static"
 STATICFILES_DIRS = [
