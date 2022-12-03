@@ -52,10 +52,10 @@ function FooterBody() {
             </div>
             <div className="link-pub">
                 <div className="iconsFacebook">
-                    <i><BsFacebook /></i>
+                   <div className="linkClass"><a href="https://www.facebook.com/shoppingnet7" target='"_blank"'><i><BsFacebook /></i></a> </div> 
                 </div>
                 <div className="iconsInstagram">
-                    <i><AiFillInstagram /></i>
+                    <div className="linkClass"><a href="https://www.instagram.com/ninet_shopping/?r=nametag" target='"_blank"'><i><AiFillInstagram /></i></a></div>
                 </div>
             </div>
             

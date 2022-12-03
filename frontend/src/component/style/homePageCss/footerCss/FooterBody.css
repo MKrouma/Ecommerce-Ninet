@@ -143,3 +143,9 @@
 
     color: #FFFFFF;
 }
+.linkClass a{
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    color: #FFFFFF;
+}
