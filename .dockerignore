@@ -1,0 +1,34 @@
+.venv/
+backend/__pycache__
+backend/migrations
+certbot/
+design/
+django_vol/
+doc/
+draft/
+frontend/
+media/
+staticfiles/
+db.sqlite3
+style.md
+
+static_volume/
+staticfiles/
+
+CREDENTIALS.md
+README.md
+runner.sh
+
+# docker related files
+Dockerfile
+Dockerfile.prod
+docker-compose.yml
+docker-compose.prod.yml
+
+# cached files
+.env.dev
+.env.prod
+.doc/
+.draft/
+.venv/
+.vscode/
