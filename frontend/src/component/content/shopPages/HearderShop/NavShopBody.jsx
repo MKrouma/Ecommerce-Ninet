@@ -2,11 +2,13 @@ import '../../../style/homePageCss/headerCss/NavBar.css';
 import { BsSearch } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import HearderImg from './HearderImg';
+
 import { Link } from 'react-router-dom';
 
+import ShopImg from './ShopImg';
 
-function Navbar() {
+
+function NavShopBody() {
   return (
     <>
         <div className="navPosition">
@@ -87,7 +89,7 @@ function Navbar() {
         </div>
         
         <div>
-            <HearderImg />
+            <ShopImg />
         </div>
         
         </div>
@@ -96,4 +98,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default NavShopBody

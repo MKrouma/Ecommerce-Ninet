@@ -1,10 +1,11 @@
-import Navbar from "../../homePages/headerContent/Navbar"
+import NavShopBody from "./NavShopBody"
+
 
 
 function NavShop() {
   return (
     <>
-        <Navbar />
+        <NavShopBody />
     </>
   )
 }
