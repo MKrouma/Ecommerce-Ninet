@@ -16,6 +16,7 @@ config.md
 .env.prod
 staticfiles
 CREDENTIALS.md
+git.sh
 
 ### Django ###
 *.log

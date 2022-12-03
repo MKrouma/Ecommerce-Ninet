@@ -178,6 +178,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_LOCATION = "static"
 STATICFILES_DIRS = [
+    "/home/app/web/static",
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
