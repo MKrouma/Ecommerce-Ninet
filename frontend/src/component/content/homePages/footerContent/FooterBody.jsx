@@ -68,7 +68,7 @@ function FooterBody() {
             <div className="general-content">
                 <div> <p>Privacy</p></div>
                 <div> <p>Service</p></div>
-                <div> <p>Term and condition</p></div>
+                <div> <p>Terms ands conditions</p></div>
             </div>
         </div>
     </div>
