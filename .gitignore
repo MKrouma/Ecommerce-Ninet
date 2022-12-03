@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 # docker dev
-Dockerfile
-docker-compose.yml
+Dockerfile.dev
+docker-compose.dev.yml
 
 # custom
 /static
