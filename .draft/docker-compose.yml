@@ -1,0 +1,45 @@
+# Reference https://docs.docker.com/compose/compose-file/compose-file-v3/
+
+version: '3.9'
+
+services:
+  django:
+    restart: unless-stopped
+    build: .
+    env_file:
+      - ./.env.dev
+    # environment:
+    #   DJANGO_SECRET_KEY: "django-insecure-^inouh^&6aegm$5dp+^iwxl42fleax5_23m3h-=sli3l79q$cp" #${DJANGO_SECRET_KEY}
+    #   DATABASE_ENGINE: "django.db.backends.postgresql_psycopg2" #${DATABASE_ENGINE}
+    #   DATABASE_NAME: "ninetshoopingdb" #${DATABASE_NAME}
+    #   DATABASE_USERNAME: "mahadou" #${DATABASE_USERNAME}
+    #   DATABASE_PASSWORD: "5f62a936771c26ac2910f08a" #${DATABASE_PASSWORD}
+    #   DATABASE_HOST: "db-postgresql-lon1-33195-do-user-12986561-0.b.db.ondigitalocean.com" #${DATABASE_HOST}
+    #   DATABASE_PORT: "25060" #${DATABASE_PORT}
+    #   # DJANGO_CORS_ORIGINS: ${DJANGO_CORS_ORIGINS}
+    #   DJANGO_DEBUG: "1" #${DJANGO_DEBUG}
+    #   # DJANGO_LOGGING: ${DJANGO_LOGGING}
+    #   DJANGO_ALLOWED_HOSTS: "" #${DJANGO_ALLOWED_HOSTS}
+    #   # STATIC_ACCESS_KEY_ID: ${STATIC_ACCESS_KEY_ID}
+    #   # STATIC_SECRET_KEY: ${STATIC_SECRET_KEY}
+    #   # STATIC_BUCKET_NAME: ${STATIC_BUCKET_NAME}
+    #   # STATIC_ENDPOINT_URL: ${STATIC_ENDPOINT_URL}
+    #   DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_MODULE}
+    ports:
+      - 8000:8000
+  nginx:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - django
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw

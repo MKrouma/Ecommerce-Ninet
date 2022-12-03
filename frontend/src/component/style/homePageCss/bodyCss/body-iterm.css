@@ -1,0 +1,294 @@
+.titleBody{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.titleBody p{
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 1rem;
+    /* identical to box height, or 143% */
+
+    display: flex; 
+    align-items: center;
+
+    color: #030307;
+}
+.left{
+    display: flex;
+    margin: 1.3rem 1rem 0 0;
+    align-items: center;
+    border: 1px solid #ADADB6;
+    height: 0;
+    width: 8rem;
+}
+.rigth{
+    display: flex;
+    margin: 1.3rem 0rem 0 1rem;
+    align-items: center;
+    border: 1px solid #ADADB6;
+    height: 0;
+    width: 8rem;
+}
+
+.card-img{
+    background-image: url('../../../images//image\ 3.png');
+    width: 290px;
+    height: 290px;
+}
+
+.card-img--iterm-2 {
+    background-image: url('../../../images//image\ 2.png');
+    width: 290px;
+    height: 290px;
+}
+
+.card-img--iterm-3{
+    background-image: url('../../../images//image\ 1.png');
+    width: 290px;
+    height: 290px;
+}
+.card-iterm--1{
+    width: 290px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.card-info{
+    text-align: center;
+
+}
+.title-card{
+    
+    text-align: center;
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #030307;
+}
+.card-title-2{
+    width: 265px;
+    height: 24px;
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+
+    color: #030307;
+
+}
+.englishTitle{
+    width: 278px;
+    height: 19px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .8rem;
+    line-height: 2.3rem;
+
+    color: #030307;
+}
+.price-iterm p{
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 4rem;
+    color: #030307;
+    
+    
+      
+}
+
+.btn-ajout button{
+   display: flex;
+   justify-content: center;
+    
+    padding: 9px 12px;
+    gap: 10px;
+
+    width: 174px;
+    height: 44px;
+    color: #FFFFFF;
+    background: #030307;
+    border-radius: 8px;
+
+
+    font-family: 'Syne';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 26px;
+        /* identical to box height, or 162% */
+    
+        display: flex;
+        align-items: center;
+    
+        color: #FFFFFF;
+}
+.btn-ajout{
+    width: 290px;
+    display: flex;
+    justify-content: center;
+}
+.content-prod{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+/*******************************************detail-iterm1********************************************************/
+.detail-iterm1{
+    margin-top: 3rem;
+    background-image: url("../../../images/quality-price.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 44rem;
+    display: flex;
+    align-items: center;
+}
+
+.detail-iterm2 {
+    margin-top: 3rem;
+    background-image: url("../../../images//Rectangle\ 7.png");
+    background-size: cover;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.detail-iterm3 {
+    margin-top: 3rem;
+    background-image: url("../../../images//Rectangle\ 8.png");
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.margin-iterm{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: .1%;
+    color: white;
+  
+}
+.margin-iterm-3{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: .1%;
+}
+
+.margin-iterm-2 {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: .1%;
+}
+.content-details{
+    height: 44rem;
+    display: flex;
+   
+}
+.title-iterm1 p{
+    width: 400px;
+    height: 68px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    /* or 142% */
+
+    display: flex;
+    align-items: center;
+
+    color: #030307;
+}
+.title-iterm3 p {
+    width: 400px;
+    height: 68px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    /* or 142% */
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+.plus-details p{
+    width: 400px;
+    height: 48px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    display: flex;
+    align-items: center;
+
+    color: #030307;
+}
+.plus-details3 p {
+    width: 400px;
+    height: 48px;
+
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+.btn-detail-iterm1 button{
+    margin-top: 1.5rem;
+    padding: 9px 12px;
+    gap: 10px;
+    color: white;
+    width: 197px;
+    height: 44px;
+    font-size: 1.1rem;
+    background: #030307;
+    border-radius: 8px;
+}
+
+.btn-detail-iterm2 button {
+    margin-top: 1.5rem;
+    padding: 9px 12px;
+    gap: 10px;
+    color: white;
+    width: 220px;
+    height: 44px;
+    font-size: 1.1rem;
+    background: #030307;
+    border-radius: 8px;
+}
