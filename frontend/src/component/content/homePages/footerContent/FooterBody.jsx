@@ -64,7 +64,7 @@ function FooterBody() {
             <div className="copyRigth">
                 <p>Copyright 2022 © NinetShop </p>
             </div>
-            <div>DEVvamoussa</div>
+            
             <div className="general-content">
                 <div> <p>Privacy</p></div>
                 <div> <p>Service</p></div>
