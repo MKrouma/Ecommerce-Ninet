@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
+# docker dev
+Dockerfile
+docker-compose.yml
+
 # custom
 /static
 /backend/migrations
@@ -11,6 +15,7 @@ config.md
 .env.dev
 .env.prod
 staticfiles
+CREDENTIALS.md
 
 ### Django ###
 *.log
